@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('promos', function (Blueprint $table) {
             $table->id();
-            //create the scheme from the promo model here
             $table->string('image');
-            $table->foreignId('shop_id')->constrained();
-            $table->integer('old_price');
-            $table->integer('new_price');
+            $table->bigInteger('shop_id');
+            $table->double('old_price');
+            $table->double('new_price');
             $table->text('description');
             $table->timestamps();
         });
